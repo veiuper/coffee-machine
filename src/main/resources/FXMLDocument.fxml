@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.332" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.smkomandor.controller.FXMLDocumentController">
+    <children>
+        <TableView fx:id="goodTableView" layoutY="25.0" prefHeight="100.0" prefWidth="800.0" />
+        <TextField fx:id="textFieldSearchBar" layoutY="137.0" prefHeight="28.0" prefWidth="800" />
+        <Button fx:id="buttonPay" layoutX="700.0" layoutY="535.0" mnemonicParsing="false" onAction="#handleButtonPayAction" text="Оплатить" textAlignment="CENTER" />
+        <TableView fx:id="basketTableView" layoutY="172.0" prefHeight="200.0" prefWidth="800" />
+        <TableView id="hide-header" fx:id="basketTotalTableView" layoutY="386.0" prefHeight="100" prefWidth="800" />
+    </children>
+</AnchorPane>
