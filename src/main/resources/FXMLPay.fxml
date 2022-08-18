@@ -4,11 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
-<VBox prefHeight="84.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<VBox prefHeight="84.0" prefWidth="254.0" xmlns="http://javafx.com/javafx/8.0.332" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="ru.smkomandor.controller.FXMLPayController">
-    <children>
-        <Label fx:id="labelSum"/>
-        <TextField fx:id="textFieldSum"/>
-        <Button fx:id="buttonPay" mnemonicParsing="false" onAction="#handleButtonPayAction" text="Pay"/>
-    </children>
+    <Label fx:id="labelSum"/>
+    <TextField fx:id="textFieldSum"/>
+    <Button fx:id="buttonPay" mnemonicParsing="false" onAction="#handleButtonPayAction" text="Pay"/>
 </VBox>

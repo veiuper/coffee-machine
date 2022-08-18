@@ -1,10 +1,12 @@
 package ru.smkomandor.db;
 
 import org.postgresql.ds.PGSimpleDataSource;
+import ru.smkomandor.model.Basket;
 import ru.smkomandor.model.Good;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +60,49 @@ public class DataAccessor {
         return goods;
     }
 
-    public void save() {
+    public void save() throws SQLException {
+        boolean isAutoCommit = connection.getAutoCommit();
+        connection.setAutoCommit(false);
+        long checkId = insertToChecksTable();
+        insertToChecklinesTable(checkId);
+        connection.commit();
+        if (isAutoCommit) {
+            connection.setAutoCommit(true);
+        }
+    }
 
+    private long insertToChecksTable() throws SQLException {
+        long result;
+        PreparedStatement prepareStatement = connection.prepareStatement(
+                "INSERT INTO cashtest.checks (date, time, amount)" +
+                        " VALUES (?, ?, ?)", new String[]{"id"});
+        prepareStatement.setDate(1, Date.valueOf(
+                        new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis())
+                ));
+        prepareStatement.setTime(2, Time.valueOf(
+                new SimpleDateFormat("24HH:mm:ss").format(System.currentTimeMillis())
+                ));
+        prepareStatement.setBigDecimal(3, Basket.get().getAmount());
+        prepareStatement.executeUpdate();
+        ResultSet resultSet = prepareStatement.getGeneratedKeys();
+        resultSet.next();
+        result = resultSet.getLong("ID");
+        prepareStatement.close();
+        return result;
+    }
+
+    private void insertToChecklinesTable(Long checkId) throws SQLException {
+        PreparedStatement prepareStatement = connection.prepareStatement(
+                "INSERT INTO cashtest.checklines (check_id, good_id, line_number, count, amount)" +
+                        " VALUES (?, ?, ?, ?, ?)");
+        for (Basket.Row row : Basket.get().getRows()) {
+            prepareStatement.setLong(1, checkId);
+            prepareStatement.setInt(2, row.getId());
+            prepareStatement.setInt(3, row.getLineNumber());
+            prepareStatement.setInt(4, row.getCount());
+            prepareStatement.setBigDecimal(5, row.getLineAmount());
+            prepareStatement.executeUpdate();
+        }
+        prepareStatement.close();
     }
 }

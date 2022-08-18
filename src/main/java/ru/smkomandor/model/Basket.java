@@ -154,6 +154,7 @@ public class Basket {
         basket.setCount(0);
         basket.setAmount(BigDecimal.valueOf(0));
     }
+
     private static void updatingIndexes() {
         List<Row> rows = basket.getRows();
         for (int i = 0; i < rows.size(); i++) {

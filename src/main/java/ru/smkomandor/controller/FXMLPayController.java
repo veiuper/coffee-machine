@@ -12,6 +12,7 @@ import ru.smkomandor.model.Basket;
 
 import java.math.BigDecimal;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class FXMLPayController implements Initializable {
@@ -32,11 +33,10 @@ public class FXMLPayController implements Initializable {
         labelSum.setText("Amount to be paid: " + total);
     }
 
-    public void handleButtonPayAction(ActionEvent actionEvent) {
+    public void handleButtonPayAction(ActionEvent actionEvent) throws SQLException {
         BigDecimal bigDecimal = BigDecimal.valueOf(Double.parseDouble(textFieldSum.getText()));
         if (bigDecimal.equals(total)) {
-            // Запись в БД в транзакции
-//            DataAccessor
+            DataAccessor.getDataAccessor().save();
             Basket.clear();
             Stage stage = (Stage) buttonPay.getScene().getWindow();
             stage.close();

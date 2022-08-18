@@ -15,8 +15,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import ru.smkomandor.db.DataAccessor;
-import ru.smkomandor.model.Good;
 import ru.smkomandor.model.Basket;
+import ru.smkomandor.model.Good;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -80,16 +80,13 @@ public class FXMLDocumentController implements Initializable {
             });
             return row;
         });
-        textFieldSearchBar.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldString, String newString) {
-                try {
-                    goodTableView.getItems().clear();
-                    goodTableView.getItems().addAll(DataAccessor.getDataAccessor().getGoods(newString));
-                    goodTableView.sort();
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+        textFieldSearchBar.textProperty().addListener((observableValue, oldString, newString) -> {
+            try {
+                goodTableView.getItems().clear();
+                goodTableView.getItems().addAll(DataAccessor.getDataAccessor().getGoods(newString));
+                goodTableView.sort();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
         });
         basketTableView.getColumns().clear();
@@ -157,7 +154,7 @@ public class FXMLDocumentController implements Initializable {
         cellFactory = new Callback<TableColumn<Basket.Row, Void>, TableCell<Basket.Row, Void>>() {
             @Override
             public TableCell<Basket.Row, Void> call(final TableColumn<Basket.Row, Void> param) {
-                final TableCell<Basket.Row, Void> cell = new TableCell<Basket.Row, Void>() {
+                return new TableCell<Basket.Row, Void>() {
 
                     private final Button button = new Button("Delete");
 
@@ -182,7 +179,6 @@ public class FXMLDocumentController implements Initializable {
                         }
                     }
                 };
-                return cell;
             }
         };
         buttonColumn.setCellFactory(cellFactory);

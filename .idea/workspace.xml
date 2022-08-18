@@ -4,31 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd89b601-011a-47d7-b974-f8c8dda4748d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/CoffeeMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLDocumentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLPayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/db/DataAccessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/model/Basket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/model/Good.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXMLDocument.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/FXMLPay.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
+    <list default="true" id="bd89b601-011a-47d7-b974-f8c8dda4748d" name="Changes" comment="Add save to DB. RF">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLDocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLPayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLPayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/smkomandor/db/DataAccessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/db/DataAccessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/smkomandor/model/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/smkomandor/model/Basket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLDocument.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXMLPay.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXMLPay.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,8 +128,16 @@
       <workItem from="1660768019919" duration="487000" />
       <workItem from="1660813014110" duration="2054000" />
       <workItem from="1660815148759" duration="1853000" />
-      <workItem from="1660817045041" duration="34050000" />
+      <workItem from="1660817045041" duration="41732000" />
     </task>
+    <task id="LOCAL-00001" summary="Init commit">
+      <created>1660855922730</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660855922730</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,13 +154,23 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init commit" />
+    <MESSAGE value="Add save to DB. RF" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add save to DB. RF" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/smkomandor/controller/FXMLDocumentController.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/src/main/java/ru/smkomandor/db/DataAccessor.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/smkomandor/db/DataAccessor.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
